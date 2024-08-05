@@ -1,0 +1,75 @@
+:root {
+  --animation-duration: 15s ;
+  --total-items: 8;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.wrapper {
+  width: 90%;
+  height: 100px;
+  max-width: 1440px;
+  margin: 50px auto;
+  position: relative;
+  overflow: hidden;
+  mask-image: linear-gradient(to right,
+  rgba(0, 0, 0, 0) ,
+  rgba(0, 0, 0, 1) 20%,
+  rgba(0, 0, 0, 1) 80%,
+  rgba(0, 0, 0, 0) );
+}
+
+.item {
+  border-radius: 10px;
+  width: 200px;
+  height: 100px;
+  background-color: red;
+  position: absolute;
+  left: calc(200px * 8);
+  animation-name: scrollLeft;
+  animation-duration: var(--animation-duration);
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+
+@keyframes scrollLeft {
+  to {
+    left: -200px;
+  }
+}
+
+.item1 {
+  animation-delay: calc((var(--animation-duration) / var(--total-items) )* (var(--total-items) - 1) * -1);
+}
+
+.item2 {
+  animation-delay: calc((var(--animation-duration) / var(--total-items) )* (var(--total-items) - 2) * -1);
+}
+
+.item3 {
+  animation-delay: calc((var(--animation-duration) / var(--total-items) )* (var(--total-items) - 3) * -1);
+}
+
+.item4 {
+  animation-delay: calc((var(--animation-duration) / var(--total-items) )* (var(--total-items) - 4) * -1);
+}
+
+.item5 {
+  animation-delay: calc((var(--animation-duration) / var(--total-items) )* (var(--total-items) - 5) * -1);
+}
+
+.item6 {
+  animation-delay: calc((var(--animation-duration) / var(--total-items) )* (var(--total-items) - 6) * -1);
+}
+
+.item7 {
+  animation-delay: calc((var(--animation-duration) / var(--total-items) )* (var(--total-items) - 7) * -1);
+}
+
+.item8 {
+  animation-delay: calc((var(--animation-duration) / var(--total-items) )* (var(--total-items) - var(--total-items)) * -1);
+}
